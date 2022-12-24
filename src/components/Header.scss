@@ -1,0 +1,37 @@
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 152px;
+  background-color: antiquewhite;
+  .logo_text {
+    @include center();
+    position: relative;
+    width: 280px;
+    height: fit-content;
+    padding: 10px;
+    font-weight: 500;
+    color: #444;
+    border: 1px solid #444;
+  }
+  .header_menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    transform: translateY(25%);
+    li {
+      Button {
+        border-radius: 25px;
+      }
+    }
+  }
+}

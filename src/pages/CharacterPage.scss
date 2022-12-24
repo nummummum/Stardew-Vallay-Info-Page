@@ -1,0 +1,50 @@
+.character_wrap {
+  display: block;
+  width: 900px;
+  border: 1px solid #ff8989;
+  padding: 10px;
+  .item_top {
+    display: flex;
+    position: relative;
+    margin-top: 14px;
+    .item_img {
+    }
+    .item_name {
+      display: block;
+      position: relative;
+      font-size: 24px;
+    }
+    .item_birth {
+      display: block;
+      position: absolute;
+      right: 10%;
+    }
+  }
+  .list_title {
+    display: flex;
+    cursor: pointer;
+    margin: 20px 10px 0 10px;
+    > li {
+      padding: 8px 20px;
+      border: 1px solid #b2b2b2;
+      border-radius: 5px 5px 0 0;
+      margin-top: 0px;
+    }
+    > :nth-child(1) {
+      background-color: #fff2f2;
+      border: 1px solid #ff8989;
+    }
+    > :nth-child(2) {
+      background-color: #fff2e4;
+    }
+    > :nth-child(3) {
+      background-color: #fdffe4;
+    }
+    > :nth-child(4) {
+      background-color: #beffae;
+    }
+    > :nth-child(5) {
+      background-color: #e4feff;
+    }
+  }
+}

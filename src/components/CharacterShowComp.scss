@@ -1,0 +1,195 @@
+.scheduleList {
+  margin: 0;
+  display: flex;
+  h4 {
+    margin: 5px;
+  }
+}
+.favoriteList {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 5px 10px;
+}
+.loveWrap,
+.likeWrap,
+.normalWrap,
+.dislikeWrap,
+.hateWrap {
+  display: block;
+  width: fit-content;
+}
+.titleWrap {
+  margin: 20px 10px;
+  display: flex;
+  position: relative;
+  width: fit-content;
+  padding: 6px;
+  margin-bottom: 0;
+  border: 1px solid #fff;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+  Button {
+    margin-left: 8px;
+    background-color: #ffe591;
+    border: 1px solid #ca9e5c;
+    &:hover {
+      background-color: #ca9e5c;
+      border: 1px solid #ffe591;
+    }
+    &:focus {
+      background-color: #ffe591;
+      border: 1px solid #ca9e5c;
+    }
+  }
+  &:hover {
+    transition: all 1s ease;
+    border: 1px solid #ca9e5c;
+  }
+}
+.sectionSpring,
+.sectionSummer,
+.sectionFall,
+.sectionWinter,
+.sectionMiss,
+.sectionMarry {
+  max-width: 700px;
+  margin-left: 10px;
+  font-weight: 700;
+}
+.sectionLove,
+.sectionLike,
+.sectionNormal,
+.sectionDislike,
+.sectionHate {
+  max-width: 500px;
+  margin-left: 10px;
+}
+.sectionSpring {
+  display: none;
+  background-color: #ffe4e4;
+  border: 1px solid #ff8989;
+  .springWrap {
+    margin: 8px;
+    background-color: #fff;
+    .seasonSpring {
+      padding: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+.sectionSummer {
+  display: none;
+  background-color: #fff2e4;
+  border: 1px solid #e6ab5e;
+  .summerWrap {
+    margin: 8px;
+    background-color: #fff;
+    .seasonSummer {
+      padding: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+.sectionFall {
+  display: none;
+  background-color: #fdffe4;
+  border: 1px solid #e6d85e;
+  .fallWrap {
+    margin: 8px;
+    background-color: #fff;
+    .seasonFall {
+      padding: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+.sectionWinter {
+  display: none;
+  background-color: #beffae;
+  border: 1px solid #5ee68b;
+  .winterWrap {
+    margin: 8px;
+    background-color: #fff;
+    .seasonWinter {
+      padding: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+.sectionMiss {
+  display: none;
+  background-color: #e4feff;
+  border: 1px solid #5ed3e6;
+  .missWrap {
+    margin: 8px;
+    background-color: #fff;
+    .seasonMiss {
+      padding: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+.sectionMarry {
+  display: none;
+  background-color: #a2c5ff;
+  border: 1px solid #5e90e6;
+  .marryWrap {
+    margin: 8px;
+    background-color: #fff;
+    .seasonMarry {
+      padding: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.sectionLove {
+  display: none;
+  background-color: #ffe4e4;
+  border: 1px solid #ff8989;
+  .loveWrap {
+    margin: 8px;
+    background-color: #fff;
+  }
+}
+.sectionLike {
+  display: none;
+  background-color: #fff2e4;
+  border: 1px solid #e6ab5e;
+  .likeWrap {
+    margin: 8px;
+    background-color: #fff;
+  }
+}
+.sectionNormal {
+  display: none;
+  background-color: #fdffe4;
+  border: 1px solid #e6d85e;
+  .normalWrap {
+    margin: 8px;
+    background-color: #fff;
+  }
+}
+.sectionDislike {
+  display: none;
+  background-color: #beffae;
+  border: 1px solid #5ee68b;
+  .dislikeWrap {
+    margin: 8px;
+    background-color: #fff;
+  }
+}
+.sectionHate {
+  display: none;
+  background-color: #e4feff;
+  border: 1px solid #5ed3e6;
+  .hateWrap {
+    margin: 8px;
+    background-color: #fff;
+  }
+}

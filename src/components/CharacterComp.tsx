@@ -24,6 +24,7 @@ export default function CharacterComp() {
   const [portraitValue, setPortraitValue] = useState("");
   const [birthValue, setBirthValue] = useState("");
   const [marryValue, setMarryValue] = useState("");
+  const [genderValue, setGenderValue] = useState("");
   const [favoriteValue, setFavoriteValue] = useState<favoriteType>({
     favorite: {
       love: "",
@@ -73,6 +74,8 @@ export default function CharacterComp() {
       />
       <p>생일 : </p>
       <input type="text" value={birthValue} onChange={onChangeBirthValue} />
+      <p>성별 (남자 or 여자) : </p>
+      <input type="text" value={genderValue} onChange={onChangeGenderValue} />
       <p>결혼 (가능 or 불가능) : </p>
       <input type="text" value={marryValue} onChange={onChangeMarryValue} />
       <p>스케쥴 : </p>
@@ -141,6 +144,9 @@ export default function CharacterComp() {
   }
   function onChangeBirthValue(e: BaseSyntheticEvent) {
     setBirthValue(e.target.value);
+  }
+  function onChangeGenderValue(e: BaseSyntheticEvent) {
+    setGenderValue(e.target.value);
   }
   function onChangeMarryValue(e: ChangeEvent<HTMLInputElement>) {
     setMarryValue(e.target.value);
@@ -470,6 +476,7 @@ export default function CharacterComp() {
         name: nameValue,
         portrait: portraitValue + ".png",
         birth: birthValue,
+        gender: genderValue,
         marry: marryValue,
         favorite: favArray,
         event: eventValue,
@@ -477,6 +484,7 @@ export default function CharacterComp() {
       });
       setNameValue("");
       setPortraitValue("");
+      setGenderValue("");
       setBirthValue("");
       setMarryValue("");
       setSchedule([

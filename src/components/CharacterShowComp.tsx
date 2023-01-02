@@ -3,6 +3,8 @@ import { characterViewType, ItemCover } from "../types/types";
 import { Button } from "antd";
 import { CaretDownOutlined, SearchOutlined } from "@ant-design/icons";
 import "./CharacterShowComp.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { bookmarkSlice } from "../redux/module/bookmarkSlice";
 export default function CharacterShowComp(props: any) {
   const item: characterViewType = props.item;
   const index = props.index;
@@ -15,6 +17,7 @@ export default function CharacterShowComp(props: any) {
   const [missArray, setMissArray] = useState<ItemCover[]>([]);
   const [marryArray, setMarryArray] = useState<ItemCover[]>([]);
 
+  //스케쥴
   const refSche = useRef<HTMLDivElement>(null);
   const refSpring = useRef<HTMLDivElement>(null);
   const refSummer = useRef<HTMLDivElement>(null);
@@ -22,15 +25,28 @@ export default function CharacterShowComp(props: any) {
   const refWinter = useRef<HTMLDivElement>(null);
   const refMiss = useRef<HTMLDivElement>(null);
   const refMarry = useRef<HTMLDivElement>(null);
-
+  //호감도
   const refFav = useRef<HTMLDivElement>(null);
   const refLove = useRef<HTMLDivElement>(null);
   const refLike = useRef<HTMLDivElement>(null);
   const refNormal = useRef<HTMLDivElement>(null);
   const refDislike = useRef<HTMLDivElement>(null);
   const refHate = useRef<HTMLDivElement>(null);
-
+  //이벤트
   const refEvent = useRef<HTMLDivElement>(null);
+  //Redux
+  const dispatch = useDispatch();
+  const sign = useSelector((state: any) => {
+    return state.bookmark.type;
+  });
+  useEffect(() => {
+    resetSche();
+    resetFav();
+    resetEvent();
+    refSche.current!.style.display = "none";
+    refFav.current!.style.display = "none";
+    refEvent.current!.style.display = "none";
+  }, [sign]);
   useEffect(() => {
     resetSche();
     switch (changeSchedule) {
@@ -112,7 +128,16 @@ export default function CharacterShowComp(props: any) {
   return (
     <div className="character_wrap" key={index}>
       <div className="item_top">
-        <img className="item_img" src={item.portrait} alt="" />
+        <div>
+          {/* Redux 즐겨찾기 등록 */}
+          <div
+            className="sign_btn"
+            onClick={() => {
+              dispatch(bookmarkSlice.actions.signup(item.name));
+            }}
+          ></div>
+          <img className="item_img" src={item.portrait} alt="" />
+        </div>
         <p className="item_name">{item.name}</p>
         <p className="item_birth">{item.birth}</p>
       </div>
@@ -167,8 +192,8 @@ export default function CharacterShowComp(props: any) {
                   return (
                     <div key={sche.id + "-" + index}>
                       <p className="scheduleList">
-                        <h4>{sche.time}</h4>
-                        <h4>{sche.content}</h4>
+                        {sche.time}
+                        {sche.content}
                       </p>
                     </div>
                   );
@@ -186,8 +211,8 @@ export default function CharacterShowComp(props: any) {
                   return (
                     <div key={sche.id + "-" + index}>
                       <p className="scheduleList">
-                        <h4>{sche.time}</h4>
-                        <h4>{sche.content}</h4>
+                        {sche.time}
+                        {sche.content}
                       </p>
                     </div>
                   );
@@ -205,8 +230,8 @@ export default function CharacterShowComp(props: any) {
                   return (
                     <div key={sche.id + "-" + index}>
                       <p className="scheduleList">
-                        <h4>{sche.time}</h4>
-                        <h4>{sche.content}</h4>
+                        {sche.time}
+                        {sche.content}
                       </p>
                     </div>
                   );
@@ -224,8 +249,8 @@ export default function CharacterShowComp(props: any) {
                   return (
                     <div key={sche.id + "-" + index}>
                       <p className="scheduleList">
-                        <h4>{sche.time}</h4>
-                        <h4>{sche.content}</h4>
+                        {sche.time}
+                        {sche.content}
                       </p>
                     </div>
                   );
@@ -243,8 +268,8 @@ export default function CharacterShowComp(props: any) {
                   return (
                     <div key={sche.id + "-" + index}>
                       <p className="scheduleList">
-                        <h4>{sche.time}</h4>
-                        <h4>{sche.content}</h4>
+                        {sche.time}
+                        {sche.content}
                       </p>
                     </div>
                   );
@@ -262,8 +287,8 @@ export default function CharacterShowComp(props: any) {
                   return (
                     <div key={sche.id + "-" + index}>
                       <p className="scheduleList">
-                        <h4>{sche.time}</h4>
-                        <h4>{sche.content}</h4>
+                        {sche.time}
+                        {sche.content}
                       </p>
                     </div>
                   );
@@ -368,13 +393,6 @@ export default function CharacterShowComp(props: any) {
           <p>호감도 이벤트</p>
           <Button type="primary" icon={<CaretDownOutlined />} />
         </div>
-
-        {/* <ul className="list_title">
-          {item.event.map((item, index) => {
-            const heartCondition = item.condition.split("(");
-            return <li key={index}>{heartCondition[0]}</li>;
-          })}
-        </ul> */}
         <div ref={refEvent}>
           {item.event.map((item, index) => {
             return (
@@ -382,7 +400,7 @@ export default function CharacterShowComp(props: any) {
                 <p>{item.condition}</p>
                 {item.choice.map((items, index) => {
                   return (
-                    <p>
+                    <p key={"choice" + items.id}>
                       {items.content}
                       {items.friendship}
                     </p>
@@ -437,4 +455,5 @@ export default function CharacterShowComp(props: any) {
     refDislike.current!.style.display = "none";
     refHate.current!.style.display = "none";
   }
+  function resetEvent() {}
 }

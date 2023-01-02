@@ -70,6 +70,7 @@ export type characterViewType = {
   name: string;
   marry: string;
   birth: string;
+  gender: string;
   portrait: string;
   schedule: ItemCover[];
   favorite: favoriteArrType;

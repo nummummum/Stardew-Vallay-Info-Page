@@ -1,3 +1,15 @@
+.page_wrap {
+  display: block;
+  .type_btn_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .type_btn {
+      margin: 20px 10px 0 10px;
+    }
+  }
+}
+
 .character_wrap {
   display: block;
   width: 900px;

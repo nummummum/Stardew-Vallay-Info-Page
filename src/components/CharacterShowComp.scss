@@ -19,6 +19,20 @@
   display: block;
   width: fit-content;
 }
+.character_wrap {
+  display: block;
+  .sign_btn {
+    display: block;
+    position: absolute;
+    border: 2px solid #ca9e5c;
+    width: 24px;
+    height: 24px;
+    top: 0px;
+    &:hover {
+      background-color: #e6ab5e;
+    }
+  }
+}
 .titleWrap {
   margin: 20px 10px;
   display: flex;

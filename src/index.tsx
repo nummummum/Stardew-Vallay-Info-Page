@@ -16,20 +16,23 @@ import ProductComp from "./components/ProductComp";
 import MineralComp from "./components/MineralComp";
 import FoodComp from "./components/FoodComp";
 import CharacterComp from "./components/CharacterComp";
-
+import { Provider } from "react-redux";
+import store from "./redux/module/store";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/bundleitem" element={<BundleItemPage />} />
-      <Route path="/character" element={<CharacterPage />} />
-      <Route path="/skillcook" element={<SkillCookPage />} />
-      <Route path="/quest" element={<QuestPage />} />
-    </Routes>
+    <Provider store={store}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/bundleitem" element={<BundleItemPage />} />
+        <Route path="/character" element={<CharacterPage />} />
+        <Route path="/skillcook" element={<SkillCookPage />} />
+        <Route path="/quest" element={<QuestPage />} />
+      </Routes>
+    </Provider>
   </BrowserRouter>
 );
 

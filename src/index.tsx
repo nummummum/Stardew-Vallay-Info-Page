@@ -18,6 +18,7 @@ import FoodComp from "./components/FoodComp";
 import CharacterComp from "./components/CharacterComp";
 import { Provider } from "react-redux";
 import store from "./redux/module/store";
+import CharacterCompTextArea from "./components/CharacterCompTextArea";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -26,7 +27,7 @@ root.render(
     <Provider store={store}>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<CharacterCompTextArea />} />
         <Route path="/bundleitem" element={<BundleItemPage />} />
         <Route path="/character" element={<CharacterPage />} />
         <Route path="/skillcook" element={<SkillCookPage />} />

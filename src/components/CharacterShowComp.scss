@@ -1,10 +1,3 @@
-.scheduleList {
-  margin: 0;
-  display: flex;
-  h4 {
-    margin: 5px;
-  }
-}
 .favoriteList {
   display: block;
   position: relative;
@@ -75,6 +68,39 @@
   margin-left: 10px;
   font-weight: 700;
 }
+//스케쥴 상황
+.seasonSpring,
+.seasonSummer,
+.seasonFall,
+.seasonWinter,
+.seasonMarry,
+.seasonMiss {
+  border-radius: 4px;
+  border: 2px solid #e6ab5e;
+  background-color: #ffe591;
+  font-size: 17px;
+  font-weight: 600;
+}
+.springWrap,
+.summerWrap,
+.fallWrap,
+.winterWrap,
+.marryWrap,
+.missWrap {
+  border: 2px solid #ca9e5c;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+.scheduleWrap {
+  padding: 6px 0;
+  .scheduleList {
+    display: inline-block;
+    margin: 4px 6px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+//스케쥴 상황
 .sectionLove,
 .sectionLike,
 .sectionNormal,
@@ -85,10 +111,8 @@
 }
 .sectionSpring {
   display: none;
-  background-color: #ffe4e4;
   border: 1px solid #ff8989;
   .springWrap {
-    margin: 8px;
     background-color: #fff;
     .seasonSpring {
       padding: 10px;
@@ -98,10 +122,8 @@
 }
 .sectionSummer {
   display: none;
-  background-color: #fff2e4;
   border: 1px solid #e6ab5e;
   .summerWrap {
-    margin: 8px;
     background-color: #fff;
     .seasonSummer {
       padding: 10px;
@@ -111,10 +133,8 @@
 }
 .sectionFall {
   display: none;
-  background-color: #fdffe4;
   border: 1px solid #e6d85e;
   .fallWrap {
-    margin: 8px;
     background-color: #fff;
     .seasonFall {
       padding: 10px;
@@ -124,10 +144,8 @@
 }
 .sectionWinter {
   display: none;
-  background-color: #beffae;
   border: 1px solid #5ee68b;
   .winterWrap {
-    margin: 8px;
     background-color: #fff;
     .seasonWinter {
       padding: 10px;
@@ -137,10 +155,8 @@
 }
 .sectionMiss {
   display: none;
-  background-color: #e4feff;
   border: 1px solid #5ed3e6;
   .missWrap {
-    margin: 8px;
     background-color: #fff;
     .seasonMiss {
       padding: 10px;
@@ -150,10 +166,8 @@
 }
 .sectionMarry {
   display: none;
-  background-color: #a2c5ff;
   border: 1px solid #5e90e6;
   .marryWrap {
-    margin: 8px;
     background-color: #fff;
     .seasonMarry {
       padding: 10px;
@@ -205,5 +219,35 @@
   .hateWrap {
     margin: 8px;
     background-color: #fff;
+  }
+}
+
+////////////////////호감도 이벤트////////////////////////
+.eventHeart {
+  border: 2px solid #ca9e5c;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 20px;
+  .conditionHeart {
+    margin: 0;
+    font-weight: 700;
+  }
+  .conditionDetail {
+    font-size: 18px;
+  }
+  .event {
+    margin: 10px 0;
+    font-size: 16px;
+    .friendship {
+      &.plus {
+        color: green;
+      }
+      &.minus {
+        color: red;
+      }
+    }
+    .content {
+      margin-bottom: 0;
+    }
   }
 }

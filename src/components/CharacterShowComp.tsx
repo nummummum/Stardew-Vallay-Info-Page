@@ -52,26 +52,32 @@ export default function CharacterShowComp(props: any) {
     switch (changeSchedule) {
       case "spring": {
         refSpring.current!.style.display = "block";
+        refSpring.current!.style.padding = "20px";
         break;
       }
       case "summer": {
         refSummer.current!.style.display = "block";
+        refSummer.current!.style.padding = "20px";
         break;
       }
       case "fall": {
         refFall.current!.style.display = "block";
+        refFall.current!.style.padding = "20px";
         break;
       }
       case "winter": {
         refWinter.current!.style.display = "block";
+        refWinter.current!.style.padding = "20px";
         break;
       }
       case "miss": {
         refMiss.current!.style.display = "block";
+        refMiss.current!.style.padding = "20px";
         break;
       }
       case "marry": {
         refMarry.current!.style.display = "block";
+        refMarry.current!.style.padding = "20px";
         break;
       }
       default:
@@ -184,115 +190,121 @@ export default function CharacterShowComp(props: any) {
           </li>
         </ul>
         <div ref={refSpring} className="sectionSpring">
+          봄 일정
           {springArray.map((item, index) => {
             return (
               <div key={item.title + index} className="springWrap">
                 <p className="seasonSpring">{item.title}</p>
-                {item.schedule.map((sche, index) => {
-                  return (
-                    <div key={sche.id + "-" + index}>
-                      <p className="scheduleList">
-                        {sche.time}
-                        {sche.content}
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="scheduleWrap">
+                  {item.schedule.map((sche, index) => {
+                    return (
+                      <div key={sche.id + "-" + index}>
+                        <p className="scheduleList">{sche.time}</p>
+                        <p className="scheduleList">{sche.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
         </div>
         <div ref={refSummer} className="sectionSummer">
+          여름 일정
           {summerArray.map((item, index) => {
             return (
               <div key={item.title + index} className="summerWrap">
                 <p className="seasonSummer">{item.title}</p>
-                {item.schedule.map((sche, index) => {
-                  return (
-                    <div key={sche.id + "-" + index}>
-                      <p className="scheduleList">
-                        {sche.time}
-                        {sche.content}
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="scheduleWrap">
+                  {item.schedule.map((sche, index) => {
+                    return (
+                      <div key={sche.id + "-" + index}>
+                        <p className="scheduleList">{sche.time}</p>
+                        <p className="scheduleList">{sche.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
         </div>
         <div ref={refFall} className="sectionFall">
+          가을 일정
           {fallArray.map((item, index) => {
             return (
               <div key={item.title + index} className="fallWrap">
                 <p className="seasonFall">{item.title}</p>
-                {item.schedule.map((sche, index) => {
-                  return (
-                    <div key={sche.id + "-" + index}>
-                      <p className="scheduleList">
-                        {sche.time}
-                        {sche.content}
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="scheduleWrap">
+                  {item.schedule.map((sche, index) => {
+                    return (
+                      <div key={sche.id + "-" + index}>
+                        <p className="scheduleList">{sche.time}</p>
+                        <p className="scheduleList">{sche.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
         </div>
         <div ref={refWinter} className="sectionWinter">
+          겨울 일정
           {winterArray.map((item, index) => {
             return (
               <div key={item.title + index} className="winterWrap">
                 <p className="seasonWinter">{item.title}</p>
-                {item.schedule.map((sche, index) => {
-                  return (
-                    <div key={sche.id + "-" + index}>
-                      <p className="scheduleList">
-                        {sche.time}
-                        {sche.content}
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="scheduleWrap">
+                  {item.schedule.map((sche, index) => {
+                    return (
+                      <div key={sche.id + "-" + index}>
+                        <p className="scheduleList">{sche.time}</p>
+                        <p className="scheduleList">{sche.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
         </div>
         <div ref={refMiss} className="sectionMiss">
+          일탈 일정
           {missArray.map((item, index) => {
             return (
               <div key={item.title + index} className="missWrap">
                 <p className="seasonMiss">{item.title}</p>
-                {item.schedule.map((sche, index) => {
-                  return (
-                    <div key={sche.id + "-" + index}>
-                      <p className="scheduleList">
-                        {sche.time}
-                        {sche.content}
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="scheduleWrap">
+                  {item.schedule.map((sche, index) => {
+                    return (
+                      <div key={sche.id + "-" + index}>
+                        <p className="scheduleList">{sche.time}</p>
+                        <p className="scheduleList">{sche.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
         </div>
         <div ref={refMarry} className="sectionMarry">
+          결혼 일정
           {marryArray.map((item, index) => {
             return (
               <div key={item.title + index} className="marryWrap">
                 <p className="seasonMarry">{item.title}</p>
-                {item.schedule.map((sche, index) => {
-                  return (
-                    <div key={sche.id + "-" + index}>
-                      <p className="scheduleList">
-                        {sche.time}
-                        {sche.content}
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="scheduleWrap">
+                  {item.schedule.map((sche, index) => {
+                    return (
+                      <div key={sche.id + "-" + index}>
+                        <p className="scheduleList">{sche.time}</p>
+                        <p className="scheduleList">{sche.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
@@ -395,16 +407,46 @@ export default function CharacterShowComp(props: any) {
         </div>
         <div ref={refEvent}>
           {item.event.map((item, index) => {
+            let changeHeart: string;
+            let heartCondition = item.condition.split("(")[0];
+            let detailCondition = item.condition.split("(", 7)[1].slice(0, -1);
+            changeHeart = +item.condition.split(" ")[0] + "HeartCondition.png";
+            const srcchangeHeart = "images/Etc/" + changeHeart;
             return (
-              <div key={index} className={"eventHeart-" + index}>
-                <p>{item.condition}</p>
+              <div key={index} className={"eventHeart"}>
+                <img src={srcchangeHeart} alt="" />
+                <p className="conditionHeart">{heartCondition}</p>
+                <p className="conditionDetail">{detailCondition}</p>
+                선택지
                 {item.choice.map((items, index) => {
-                  return (
-                    <p key={"choice" + items.id}>
-                      {items.content}
-                      {items.friendship}
-                    </p>
-                  );
+                  if (items.friendship > 0) {
+                    return (
+                      <div className="event" key={"choice" + items.id}>
+                        <p className="content">{items.content}</p>
+                        <p className="friendship plus">
+                          호감도 : {items.friendship}
+                        </p>
+                      </div>
+                    );
+                  } else if (items.friendship < 0) {
+                    return (
+                      <div className="event" key={"choice" + items.id}>
+                        <p className="content">{items.content}</p>
+                        <p className="friendship minus">
+                          호감도 : {items.friendship}
+                        </p>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div className="event" key={"choice" + items.id}>
+                        <p className="content">{items.content}</p>
+                        <p className="friendship">
+                          호감도 : {items.friendship}
+                        </p>
+                      </div>
+                    );
+                  }
                 })}
               </div>
             );

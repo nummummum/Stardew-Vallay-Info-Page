@@ -29,17 +29,31 @@ export type keyvalue = {
   time: string;
   content: string;
 };
+
 export type InputItem = {
   id: number;
   time: string;
   content: string;
 };
+
+export type InputItem2 = {
+  textArea: string;
+};
+
 export type ItemCover = {
   season: string;
   title: string;
   id: number;
   schedule: InputItem[];
 };
+
+export type ItemCover2 = {
+  season: string;
+  title: string;
+  id: number;
+  schedule: InputItem2[];
+};
+
 export type favoriteType = {
   favorite: {
     love: string;
@@ -73,6 +87,16 @@ export type characterViewType = {
   gender: string;
   portrait: string;
   schedule: ItemCover[];
+  favorite: favoriteArrType;
+  event: eventType[];
+};
+export type characterViewType2 = {
+  name: string;
+  marry: string;
+  birth: string;
+  gender: string;
+  portrait: string;
+  schedule: ItemCover2[];
   favorite: favoriteArrType;
   event: eventType[];
 };

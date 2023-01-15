@@ -1,0 +1,44 @@
+.fish_detail,
+.fish_detail_title {
+  display: flex;
+  padding: 10px 0;
+  width: 800px;
+  font-size: 15px;
+  border: 1px solid #e6ab5e;
+  .detail_img,
+  .detail_location,
+  .detail_name,
+  .detail_purpose,
+  .detail_time,
+  .detail_weather {
+    margin: 5px;
+  }
+
+  .detail_img {
+    width: 30px;
+    height: 30px;
+  }
+  .detail_name {
+    width: 100px;
+  }
+  .detail_location {
+    width: 150px;
+  }
+  .detail_time {
+    width: 170px;
+  }
+  .detail_weather {
+    width: 80px;
+  }
+  .detail_purpose {
+    width: 200px;
+  }
+}
+.fish_detail_title {
+  background-color: #ffe591;
+  justify-content: center;
+}
+.bundle_img {
+  width: 24px;
+  height: 24px;
+}

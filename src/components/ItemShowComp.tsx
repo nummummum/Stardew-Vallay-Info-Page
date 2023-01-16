@@ -26,6 +26,7 @@ export default function ItemShowComp() {
       <div className="fish_detail_title">
         <h4 className="detail_img"></h4>
         <h4 className="detail_name">이름</h4>
+        <h4 className="detail_season">계절</h4>
         <h4 className="detail_location">위치</h4>
         <h4 className="detail_time">시간</h4>
         <h4 className="detail_weather">날씨</h4>
@@ -36,6 +37,7 @@ export default function ItemShowComp() {
           <div className="fish_detail">
             <img src={item.portrait} className="detail_img" />
             <h4 className="detail_name">{item.name}</h4>
+            <h4 className="detail_season">{item.season}</h4>
             <h4 className="detail_location">{item.location}</h4>
             <h4 className="detail_time">{item.time}</h4>
             <h4 className="detail_weather">{item.weather}</h4>

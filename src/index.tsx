@@ -27,7 +27,7 @@ root.render(
     <Provider store={store}>
       <Header />
       <Routes>
-        <Route path="/" element={<CharacterCompTextArea />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/bundleitem" element={<BundleItemPage />} />
         <Route path="/character" element={<CharacterPage />} />
         <Route path="/skillcook" element={<SkillCookPage />} />

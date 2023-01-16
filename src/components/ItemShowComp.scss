@@ -10,7 +10,8 @@
   .detail_name,
   .detail_purpose,
   .detail_time,
-  .detail_weather {
+  .detail_weather,
+  .detail_season {
     margin: 5px;
   }
 
@@ -31,6 +32,9 @@
     width: 80px;
   }
   .detail_purpose {
+    width: 200px;
+  }
+  .detail_season {
     width: 200px;
   }
 }

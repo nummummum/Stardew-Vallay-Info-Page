@@ -8,6 +8,14 @@ import { collection, DocumentData, getDocs, query } from "firebase/firestore";
 import { bundleViewType } from "../types/types";
 export default function ItemShowComp() {
   const [fishdata, setFishData] = useState<FishType[]>([]);
+  const [everyFishdata, setEveryFishData] = useState<FishType[]>([]);
+  const [springFishdata, setSpringFishData] = useState<FishType[]>([]);
+  const [summerFishdata, setSummerFishData] = useState<FishType[]>([]);
+  const [fallFishdata, setFallFishData] = useState<FishType[]>([]);
+  const [winterFishdata, setWinterFishData] = useState<FishType[]>([]);
+  const [etcFishdata, setEtcFishData] = useState<FishType[]>([]);
+  const [islandFishdata, setIslandFishData] = useState<FishType[]>([]);
+
   type FishType = {
     name: string;
     portrait: string;
@@ -23,28 +31,33 @@ export default function ItemShowComp() {
   }, []);
   return (
     <div>
-      <div className="fish_detail_title">
-        <h4 className="detail_img"></h4>
-        <h4 className="detail_name">이름</h4>
-        <h4 className="detail_season">계절</h4>
-        <h4 className="detail_location">위치</h4>
-        <h4 className="detail_time">시간</h4>
-        <h4 className="detail_weather">날씨</h4>
-        <h4 className="detail_purpose">용도</h4>
+      모든 계절
+      {seasonSort(everyFishdata)}봄{seasonSort(springFishdata)}
+      여름
+      {seasonSort(summerFishdata)}
+      가을
+      {seasonSort(fallFishdata)}
+      겨울
+      {seasonSort(winterFishdata)}
+      진저섬,야시장
+      {seasonSort(islandFishdata)}
+      통발
+      <div>
+        <div className="fish_detail_title">
+          <h4 className="detail_img"></h4>
+          <h4 className="detail_name">이름</h4>
+          <h4 className="detail_location">위치</h4>
+        </div>
+        {etcFishdata.map((item, index) => {
+          return (
+            <div className="fish_detail">
+              <img src={item.portrait} className="detail_img" />
+              <h4 className="detail_name">{item.name}</h4>
+              <h4 className="detail_location">{item.location}</h4>
+            </div>
+          );
+        })}
       </div>
-      {fishdata.map((item, index) => {
-        return (
-          <div className="fish_detail">
-            <img src={item.portrait} className="detail_img" />
-            <h4 className="detail_name">{item.name}</h4>
-            <h4 className="detail_season">{item.season}</h4>
-            <h4 className="detail_location">{item.location}</h4>
-            <h4 className="detail_time">{item.time}</h4>
-            <h4 className="detail_weather">{item.weather}</h4>
-            {findFishBundle(item.purpose)}
-          </div>
-        );
-      })}
     </div>
   );
   function getFish() {
@@ -66,6 +79,28 @@ export default function ItemShowComp() {
           time: data.time,
           weather: data.weather,
         };
+        if (pushdata.season === "항상") {
+          if (pushdata.location.includes("게잡이")) {
+            setEtcFishData((bundle) => [...bundle, pushdata]);
+          } else if (
+            pushdata.location.includes("야시장") ||
+            pushdata.location.includes("진저섬")
+          ) {
+            setIslandFishData((bundle) => [...bundle, pushdata]);
+          } else setEveryFishData((bundle) => [...bundle, pushdata]);
+        }
+        if (pushdata.season.includes("봄")) {
+          setSpringFishData((bundle) => [...bundle, pushdata]);
+        }
+        if (pushdata.season.includes("여름")) {
+          setSummerFishData((bundle) => [...bundle, pushdata]);
+        }
+        if (pushdata.season.includes("가을")) {
+          setFallFishData((bundle) => [...bundle, pushdata]);
+        }
+        if (pushdata.season.includes("겨울")) {
+          setWinterFishData((bundle) => [...bundle, pushdata]);
+        }
         setFishData((bundle) => [...bundle, pushdata]);
       });
     });
@@ -124,6 +159,34 @@ export default function ItemShowComp() {
           );
         })}
       </h4>
+    );
+  }
+  function seasonSort(data: FishType[]) {
+    return (
+      <div>
+        <div className="fish_detail_title">
+          <h4 className="detail_img"></h4>
+          <h4 className="detail_name">이름</h4>
+          <h4 className="detail_season">계절</h4>
+          <h4 className="detail_location">위치</h4>
+          <h4 className="detail_time">시간</h4>
+          <h4 className="detail_weather">날씨</h4>
+          <h4 className="detail_purpose">용도</h4>
+        </div>
+        {data.map((item, index) => {
+          return (
+            <div className="fish_detail">
+              <img src={item.portrait} className="detail_img" />
+              <h4 className="detail_name">{item.name}</h4>
+              <h4 className="detail_season">{item.season}</h4>
+              <h4 className="detail_location">{item.location}</h4>
+              <h4 className="detail_time">{item.time}</h4>
+              <h4 className="detail_weather">{item.weather}</h4>
+              {findFishBundle(item.purpose)}
+            </div>
+          );
+        })}
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@
 .fish_detail_title {
   display: flex;
   padding: 10px 0;
-  width: 800px;
+  width: fit-content;
   font-size: 15px;
   border: 1px solid #e6ab5e;
   .detail_img,
@@ -35,12 +35,12 @@
     width: 200px;
   }
   .detail_season {
-    width: 200px;
+    width: 100px;
   }
 }
 .fish_detail_title {
   background-color: #ffe591;
-  justify-content: center;
+  justify-content: start;
 }
 .bundle_img {
   width: 24px;

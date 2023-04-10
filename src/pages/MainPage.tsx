@@ -28,7 +28,7 @@ export default function MainPage() {
           </li>
           <li>
             <MainLotationCard
-              titlename="스킬, 요리"
+              titlename="스킬, 요리 (개발중)"
               content={
                 "어떤 스킬을 찍는게 좋을까,\n효과좋은 요리 제조법은 뭐지??"
               }
@@ -38,7 +38,7 @@ export default function MainPage() {
           </li>
           <li>
             <MainLotationCard
-              titlename="퀘스트"
+              titlename="퀘스트 (개발중)"
               content={"중요 퀘스트만 보고싶어요!\n필수퀘와 게시판퀘를 한번에"}
               linkname="/character"
               imgurl="unnamed"

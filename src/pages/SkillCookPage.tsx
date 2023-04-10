@@ -1,3 +1,3 @@
 export default function SkillCookPage() {
-  return <>hi4</>;
+  return <></>;
 }

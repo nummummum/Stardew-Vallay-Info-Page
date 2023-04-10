@@ -19,6 +19,7 @@ import CharacterComp from "./components/CharacterComp";
 import { Provider } from "react-redux";
 import store from "./redux/module/store";
 import CharacterCompTextArea from "./components/CharacterCompTextArea";
+import AdminPage from "./pages/AdminPage";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -32,6 +33,7 @@ root.render(
         <Route path="/character" element={<CharacterPage />} />
         <Route path="/skillcook" element={<SkillCookPage />} />
         <Route path="/quest" element={<QuestPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </Provider>
   </BrowserRouter>

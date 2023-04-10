@@ -14,38 +14,59 @@ export default function FishComp() {
   const [timeValue, setTimeValue] = useState("");
 
   return (
-    <div>
-      <p>물고기 이름 : </p>
-      <input type="text" value={nameValue} onChange={onChangeNameValue} />
-      <p>초상화 : </p>
-      <input
-        type="text"
-        value={portraitValue}
-        onChange={onChangePortraitValue}
-      />
-      <p>판매가격 : </p>
-      <input
-        type="text"
-        value={sellpriceValue}
-        onChange={onChangeSellpriceValue}
-      />
-      <p>서식지 : </p>
-      <input
-        type="text"
-        value={locationValue}
-        onChange={onChangeLocationValue}
-      />
-      <p>출몰 시간 : </p>
-      <input type="text" value={timeValue} onChange={onChangeTimeValue} />
-
-      <p>계절 : </p>
-      <input type="text" value={seasonValue} onChange={onChangeSeasonValue} />
-
-      <p>날씨 : </p>
-      <input type="text" value={weatherValue} onChange={onChangeWeatherValue} />
-
-      <p>사용처 : </p>
-      <input type="text" value={purposeValue} onChange={onChangePurposeValue} />
+    <div className="item_add_style">
+      <div>
+        <p>물고기 이름 : </p>
+        <input type="text" value={nameValue} onChange={onChangeNameValue} />
+      </div>
+      <div>
+        <p>초상화 : </p>
+        <input
+          type="text"
+          value={portraitValue}
+          onChange={onChangePortraitValue}
+        />
+      </div>
+      <div>
+        <p>판매가격 : </p>
+        <input
+          type="text"
+          value={sellpriceValue}
+          onChange={onChangeSellpriceValue}
+        />
+      </div>
+      <div>
+        <p>서식지 : </p>
+        <input
+          type="text"
+          value={locationValue}
+          onChange={onChangeLocationValue}
+        />
+      </div>
+      <div>
+        <p>출몰 시간 : </p>
+        <input type="text" value={timeValue} onChange={onChangeTimeValue} />
+      </div>
+      <div>
+        <p>계절 : </p>
+        <input type="text" value={seasonValue} onChange={onChangeSeasonValue} />
+      </div>
+      <div>
+        <p>날씨 : </p>
+        <input
+          type="text"
+          value={weatherValue}
+          onChange={onChangeWeatherValue}
+        />
+      </div>
+      <div>
+        <p>사용처 : </p>
+        <input
+          type="text"
+          value={purposeValue}
+          onChange={onChangePurposeValue}
+        />
+      </div>
       <button onClick={admitInfo}>등록</button>
     </div>
   );

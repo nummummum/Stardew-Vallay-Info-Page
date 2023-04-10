@@ -1,0 +1,88 @@
+.admin_div {
+  display: none;
+}
+.detail_wrap {
+  display: block;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+.detail,
+.detail_title {
+  display: flex;
+  padding: 4px 0;
+  font-size: 15px;
+  border: 1px solid #000;
+  .detail_img,
+  .detail_location,
+  .detail_name,
+  .detail_purpose,
+  .detail_time,
+  .detail_weather,
+  .detail_season,
+  .detail_healing,
+  .detail_explain,
+  .detail_obtainday,
+  .detail_sellprice,
+  .detail_buyprice,
+  .detail_detail,
+  .detail_ingredient {
+    margin: 5px;
+  }
+
+  .detail_img {
+    width: 140px;
+  }
+  .detail_name {
+    width: 100px;
+  }
+  .detail_location {
+    width: 150px;
+  }
+  .detail_time {
+    width: 100px;
+  }
+  .detail_weather {
+    width: 80px;
+  }
+  .detail_purpose {
+    width: 160px;
+  }
+  .detail_season {
+    width: 70px;
+  }
+  .detail_healing {
+    width: 80px;
+  }
+  .detail_explain {
+    width: 160px;
+  }
+  .detail_obtainday {
+    width: 60px;
+  }
+  .detail_sellprice {
+    width: 60px;
+  }
+  .detail_buyprice {
+    width: 60px;
+  }
+  .detail_detail {
+    width: 160px;
+    max-height: 70px;
+    overflow: hidden;
+    &:hover {
+      max-height: fit-content;
+    }
+  }
+  .detail_ingredient {
+    width: 100px;
+  }
+}
+.detail_title {
+  background-color: #ccc;
+  justify-content: start;
+}
+.bundle_img {
+  width: 24px;
+  height: 24px;
+}

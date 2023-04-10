@@ -63,7 +63,7 @@ export default function CharacterCompTextArea() {
   ]);
   useEffect(() => {}, []);
   return (
-    <div>
+    <div className="item_add_style">
       <p>캐릭터 이름 : </p>
       <input type="text" value={nameValue} onChange={onChangeNameValue} />
       <p>초상화 : </p>

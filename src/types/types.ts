@@ -100,3 +100,57 @@ export type characterViewType2 = {
   favorite: favoriteArrType;
   event: eventType[];
 };
+
+export type FishType = {
+  name: string;
+  portrait: string;
+  season: string;
+  sellprice: string;
+  purpose: string[];
+  location: string;
+  time: string;
+  weather: string;
+};
+export type FoodType = {
+  name: string;
+  portrait: string;
+  sellprice: string;
+  purpose: string[];
+  ingredient: string[];
+  healing: number[];
+  explain: string;
+};
+export type HarvestType = {
+  name: string;
+  portrait: string;
+  buypricec: string;
+  sellprice: string;
+  purpose: string[];
+  season: string;
+  detail: string;
+  healing: number[];
+  explain: string;
+  obtainday: number[];
+};
+export type MineralType = {
+  name: string;
+  portrait: string;
+  sellprice: string;
+  purpose: string[];
+  explain: string;
+};
+export type PlantType = {
+  name: string;
+  portrait: string;
+  purpose: string[];
+  season: string;
+  explain: string;
+};
+export type ProductType = {
+  name: string;
+  portrait: string;
+  purpose: string[];
+  healing: number[];
+  sellprice: string;
+  explain: string;
+};

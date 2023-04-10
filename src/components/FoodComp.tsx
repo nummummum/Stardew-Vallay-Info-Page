@@ -13,33 +13,60 @@ export default function FoodComp() {
   const [purposeValue, setPurposeValue] = useState("");
 
   return (
-    <div>
-      <p>요리 이름 : </p>
-      <input type="text" value={nameValue} onChange={onChangeNameValue} />
-      <p>초상화 : </p>
-      <input
-        type="text"
-        value={portraitValue}
-        onChange={onChangePortraitValue}
-      />
-      <p>판매가격 : </p>
-      <input
-        type="text"
-        value={sellpriceValue}
-        onChange={onChangeSellpriceValue}
-      />
-      <p>회복량 : </p>
-      <input type="text" value={healingValue} onChange={onChangeHealingValue} />
-      <p>얻는 방법 : </p>
-      <input type="text" value={explainValue} onChange={onChangeExplainValue} />
-      <p>요리 재료 : </p>
-      <input
-        type="text"
-        value={ingredientValue}
-        onChange={onChangeIngredientValue}
-      />
-      <p>사용처 : </p>
-      <input type="text" value={purposeValue} onChange={onChangePurposeValue} />
+    <div className="item_add_style">
+      <div>
+        <p>요리 이름 : </p>
+        <input type="text" value={nameValue} onChange={onChangeNameValue} />
+      </div>
+      <div>
+        <p>초상화 : </p>
+        <input
+          type="text"
+          value={portraitValue}
+          onChange={onChangePortraitValue}
+        />
+      </div>
+      <div>
+        <p>판매가격 : </p>
+        <input
+          type="text"
+          value={sellpriceValue}
+          onChange={onChangeSellpriceValue}
+        />
+      </div>
+      <div>
+        <p>회복량 : </p>
+        <input
+          type="text"
+          value={healingValue}
+          onChange={onChangeHealingValue}
+        />
+      </div>
+      <div>
+        <p>얻는 방법 : </p>
+        <input
+          type="text"
+          value={explainValue}
+          onChange={onChangeExplainValue}
+        />
+      </div>
+      <div>
+        <p>요리 재료 : </p>
+        <input
+          type="text"
+          value={ingredientValue}
+          onChange={onChangeIngredientValue}
+        />
+      </div>
+      <div>
+        <p>사용처 : </p>
+        <input
+          type="text"
+          value={purposeValue}
+          onChange={onChangePurposeValue}
+        />
+      </div>
+
       <button onClick={admitInfo}>등록</button>
     </div>
   );
@@ -82,7 +109,7 @@ export default function FoodComp() {
         name: nameValue,
         portrait: portraitValue + ".png",
         sellprice: sellpriceValue,
-        healling: healingArrayNumber,
+        healing: healingArrayNumber,
         purpose: purposeArrayString,
         ingredient: ingredientString,
         explain: explainValue,

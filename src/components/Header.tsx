@@ -33,6 +33,11 @@ export default function Header() {
                   <Button icon={<SearchOutlined />}>퀘스트</Button>
                 </Link>
               </li>
+              <li className="btn_admin">
+                <Link to={"/admin"}>
+                  <Button icon={<SearchOutlined />}>관리</Button>
+                </Link>
+              </li>
             </Space>
           </Space>
         </ul>

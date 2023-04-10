@@ -33,5 +33,14 @@
         border-radius: 25px;
       }
     }
+    .btn_admin {
+      Button {
+        margin-left: 40px;
+        border-radius: 10px;
+        background-color: #dfdfdf;
+        &:hover {
+        }
+      }
+    }
   }
 }

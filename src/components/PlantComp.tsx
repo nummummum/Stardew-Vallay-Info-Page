@@ -11,23 +11,40 @@ export default function PlantComp() {
   const [purposeValue, setPurposeValue] = useState("");
 
   return (
-    <div>
-      <p>채집물 이름 : </p>
-      <input type="text" value={nameValue} onChange={onChangeNameValue} />
-      <p>초상화 : </p>
-      <input
-        type="text"
-        value={portraitValue}
-        onChange={onChangePortraitValue}
-      />
-      <p>입수처 : </p>
-      <input type="text" value={explainValue} onChange={onChangeExplainValue} />
+    <div className="item_add_style">
+      <div>
+        <p>채집물 이름 : </p>
+        <input type="text" value={nameValue} onChange={onChangeNameValue} />
+      </div>
+      <div>
+        <p>초상화 : </p>
+        <input
+          type="text"
+          value={portraitValue}
+          onChange={onChangePortraitValue}
+        />
+      </div>
+      <div>
+        <p>입수처 : </p>
+        <input
+          type="text"
+          value={explainValue}
+          onChange={onChangeExplainValue}
+        />
+      </div>
+      <div>
+        <p>계절 : </p>
+        <input type="text" value={seasonValue} onChange={onChangeSeasonValue} />
+      </div>
+      <div>
+        <p>사용처 : </p>
+        <input
+          type="text"
+          value={purposeValue}
+          onChange={onChangePurposeValue}
+        />
+      </div>
 
-      <p>계절 : </p>
-      <input type="text" value={seasonValue} onChange={onChangeSeasonValue} />
-
-      <p>사용처 : </p>
-      <input type="text" value={purposeValue} onChange={onChangePurposeValue} />
       <button onClick={admitInfo}>등록</button>
     </div>
   );

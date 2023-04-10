@@ -12,41 +12,79 @@ export default function CropComp() {
   const [buypriceValue, setBuypriceValue] = useState(0);
   const [obtaindayValue, setObtaindayValue] = useState("");
   const [explainValue, setExplainValue] = useState("");
+  const [purposeValue, setPurposeValue] = useState<string>("");
+  const [detailValue, setDetailValue] = useState<string>("");
 
   return (
-    <div>
-      <p>작물 이름 : </p>
-      <input type="text" value={nameValue} onChange={onChangeNameValue} />
-      <p>초상화 : </p>
-      <input
-        type="text"
-        value={portraitValue}
-        onChange={onChangePortraitValue}
-      />
-      <p>성장 기간 : </p>
-      <input
-        type="text"
-        value={obtaindayValue}
-        onChange={onChangeObtaindayValue}
-      />
-      <p>계절 : </p>
-      <input type="text" value={seasonValue} onChange={onChangeSeasonValue} />
-      <p>회복량 : </p>
-      <input type="text" value={healingValue} onChange={onChangeHealingValue} />
-      <p>구매가격 : </p>
-      <input
-        type="text"
-        value={buypriceValue}
-        onChange={onChangeBuypriceValue}
-      />
-      <p>판매가격 : </p>
-      <input
-        type="text"
-        value={sellpriceValue}
-        onChange={onChangeSellpriceValue}
-      />
-      <p>추가설명 : </p>
-      <input type="text" value={explainValue} onChange={onChangeExplainValue} />
+    <div className="item_add_style">
+      <div>
+        <p>작물 이름 : </p>
+        <input type="text" value={nameValue} onChange={onChangeNameValue} />
+      </div>
+      <div>
+        <p>초상화 : </p>
+        <input
+          type="text"
+          value={portraitValue}
+          onChange={onChangePortraitValue}
+        />
+      </div>
+      <div>
+        <p>성장 기간 : </p>
+        <input
+          type="text"
+          value={obtaindayValue}
+          onChange={onChangeObtaindayValue}
+        />
+      </div>
+      <div>
+        <p>계절 : </p>
+        <input type="text" value={seasonValue} onChange={onChangeSeasonValue} />
+      </div>
+      <div>
+        <p>회복량 : </p>
+        <input
+          type="text"
+          value={healingValue}
+          onChange={onChangeHealingValue}
+        />
+      </div>
+      <div>
+        <p>구매가격 : </p>
+        <input
+          type="text"
+          value={buypriceValue}
+          onChange={onChangeBuypriceValue}
+        />
+      </div>
+      <div>
+        <p>판매가격 : </p>
+        <input
+          type="text"
+          value={sellpriceValue}
+          onChange={onChangeSellpriceValue}
+        />
+      </div>
+      <div>
+        <p>추가설명 : </p>
+        <input
+          type="text"
+          value={explainValue}
+          onChange={onChangeExplainValue}
+        />
+      </div>
+      <div>
+        <p>목적 : </p>
+        <input
+          type="text"
+          value={purposeValue}
+          onChange={onChangePurposeValue}
+        />
+      </div>
+      <div>
+        <p>디테일 : </p>
+        <input type="text" value={detailValue} onChange={onChangeDetailValue} />
+      </div>
       <button onClick={admitInfo}>등록</button>
     </div>
   );
@@ -75,6 +113,12 @@ export default function CropComp() {
   function onChangeExplainValue(e: BaseSyntheticEvent) {
     setExplainValue(e.target.value);
   }
+  function onChangePurposeValue(e: BaseSyntheticEvent) {
+    setPurposeValue(e.target.value);
+  }
+  function onChangeDetailValue(e: BaseSyntheticEvent) {
+    setDetailValue(e.target.value);
+  }
   function admitInfo() {
     if (
       (nameValue &&
@@ -99,6 +143,8 @@ export default function CropComp() {
       let healingArrayNumber: Array<number>;
       healingArrayString = healingValue.split(",");
       healingArrayNumber = healingArrayString.map((value) => parseInt(value));
+      let purposeArrayString: Array<string>;
+      purposeArrayString = purposeValue.split(",");
 
       const fbCharacter = firestore.collection("Resource/Object/Harvest");
       fbCharacter.doc(portraitValue).set({
@@ -110,7 +156,8 @@ export default function CropComp() {
         obtainday: obtainArrayNumber,
         healing: healingArrayNumber,
         explain: explainValue,
-        purpose: {},
+        purpose: purposeArrayString,
+        detail: detailValue,
       });
       setNameValue("");
       setPortraitValue("");
@@ -120,6 +167,8 @@ export default function CropComp() {
       setBuypriceValue(0);
       setObtaindayValue("");
       setExplainValue("");
+      setPurposeValue("");
+      setDetailValue("");
     } else {
       alert("오류입니다.");
     }

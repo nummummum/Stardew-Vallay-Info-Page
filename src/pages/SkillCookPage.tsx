@@ -4,6 +4,7 @@ import { useRef, useEffect, BaseSyntheticEvent } from "react";
 import BundleShowComp from "../components/BundleShowComp";
 import ItemShowComp from "../components/ItemShowComp";
 import SkillShowComp from "../components/SkillShowComp";
+import { EnchantShowComp } from "../components/EnchantShowComp";
 
 export default function SkillCookPage() {
   const bundleRef = useRef<HTMLDivElement>(null);
@@ -26,7 +27,9 @@ export default function SkillCookPage() {
         <div className="bundle_btn_wrap" ref={bundleRef}>
           <SkillShowComp />
         </div>
-        <div className="item_wrap" ref={itemRef}></div>
+        <div className="item_wrap" ref={itemRef}>
+          <EnchantShowComp />
+        </div>
       </div>
     </section>
   );
